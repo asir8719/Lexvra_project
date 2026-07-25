@@ -11,8 +11,12 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3001';
 
-app.use(cors());
+app.use(cors({
+  origin: [CLIENT_URL, 'http://localhost:3001', 'http://localhost:3000'],
+  credentials: true,
+}));
 app.use(express.json());
 
 app.use('/api/contact', contactRoutes);
@@ -25,7 +29,7 @@ app.get('/api/health', (_req, res) => {
 });
 
 const connectDB = async () => {
-  const uri = 'mongodb+srv://ashir16592:90600Asir@cluster0.1pa3y.mongodb.net/?appName=Cluster0';
+  const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/lexvra';
   try {
     await mongoose.connect(uri, { serverSelectionTimeoutMS: 3000 });
     console.log('MongoDB connected');
