@@ -14,8 +14,7 @@ const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3001';
 
 app.use(cors({
-  origin: ['https://lexvra-project-git-deploy-branch-md-asir-khans-projects.vercel.app'
-, 'http://localhost:3001', 'http://localhost:3000'],
+  origin: ['https://lexvra-project.vercel.app', 'http://localhost:3001', 'http://localhost:3000'],
   credentials: true,
 }));
 app.use(express.json());
