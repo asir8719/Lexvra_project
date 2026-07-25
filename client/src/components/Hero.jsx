@@ -3,6 +3,7 @@ import HeroCanvas from './three/HeroCanvas';
 import FilmGrain from './FilmGrain';
 import ComparisonWidget from './ComparisonWidget';
 import useHeroScrollAnimation from '../hooks/useHeroScrollAnimation';
+import { Link } from 'react-router-dom';
 
 const slides = [
   {
@@ -88,20 +89,20 @@ export default function Hero() {
 
                 {slide.showButtons && (
                   <div className={`flex flex-wrap gap-4 ${slide.align === 'center' ? 'justify-center' : ''} pointer-events-auto relative z-20`}>
-                    <a
-                      href="/contact"
+                    <Link
+                      to="/contact"
                       className="inline-flex items-center px-8 py-3 rounded-full bg-[#b8b8d4] text-black
-                                 text-xs font-semibold uppercase tracking-widest hover:bg-[#cccce8] transition-colors cursor-pointer"
+                                text-xs font-semibold uppercase tracking-widest hover:bg-[#cccce8] transition-colors"
                     >
                       Get Started
-                    </a>
-                    <a
-                      href="/about"
+                    </Link>
+                    <Link
+                      to="/about"
                       className="inline-flex items-center px-8 py-3 rounded-full border border-white/30 text-white
-                                 text-xs font-semibold uppercase tracking-widest hover:bg-white/5 transition-colors cursor-pointer"
+                                text-xs font-semibold uppercase tracking-widest hover:bg-white/5 transition-colors"
                     >
                       Learn More
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
