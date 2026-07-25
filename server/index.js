@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3001';
 
 app.use(cors({
-  origin: [CLIENT_URL, 'http://localhost:3001', 'http://localhost:3000'],
+  origin: ['https://lexvra-project.onrender.com/api/gallery'
+, 'http://localhost:3001', 'http://localhost:3000'],
   credentials: true,
 }));
 app.use(express.json());
